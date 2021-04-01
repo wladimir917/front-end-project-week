@@ -4,10 +4,11 @@ import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import './User.css'
 
-const host = 'https://young-coast-73926.herokuapp.com';
+// const host = 'https://young-coast-73926.herokuapp.com';
+const host = 'https://sandbox-fn.azurewebsites.net';
+
+
 // const host = 'http://localhost:5000';
-
-
 
 class UserLogin extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class UserLogin extends Component {
 
   handleLogin = () => {
     axios
-      .post(`${host}/api/auth/login`, this.state)
+      .post(`${host}/api/login?code=zzRsA8n2saAFxWZe0aOt5FanWjbBiHpGTPy/KAvn3mMGQOUQH8tlLw==`, this.state)
       .then(response => {
         localStorage.setItem('jwt', response.data.token);
         localStorage.setItem('msg', response.data.message);

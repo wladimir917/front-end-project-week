@@ -3,7 +3,8 @@ import axios from 'axios';
 import { ADD, EDIT, CANCEL, FETCH, FETCHED, FETCHING, SAVING, SAVED, UPDATING, UPDATED, DELETING, DELETED, ERROR } from "./types";
 
 // const host = 'http://localhost:5000';
-const host = 'https://young-coast-73926.herokuapp.com';
+// const host = 'https://young-coast-73926.herokuapp.com';
+const host = 'https://sandbox-fn.azurewebsites.net';
 
 export const fetch = () => {
   return {
@@ -111,7 +112,7 @@ const requestOptions = () => {
 
 export const fetchNotes = () => {
 
-  const promise = axios.get(`${host}/api/notes/`, requestOptions());
+  const promise = axios.get(`${host}/api/notes?code=egYJaLqUWEHSBA/MXK0g4VdX8dqPKntue0cdtSVzDoLrsP169jn5ww==`, requestOptions());
   return function(dispatch) {
       dispatch(cancelEdit());
       dispatch(fetching());
